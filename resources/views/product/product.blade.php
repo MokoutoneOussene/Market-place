@@ -62,7 +62,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header bg-warning">
-                <h3 class="card-title" style="color: #002a54;font-weight:bold">Liste des produits ({{$products->count()}})</h3>
+                <h3 class="card-title" style="color: #002a54; font-weight:bold">Liste des produits ({{$products->count()}})</h3>
                 <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
                         <input type="text" name="table_search" class="form-control float-right" placeholder="Search">

@@ -27,7 +27,7 @@ class CreateVentesTable extends Migration
 
             $table->integer('price');
             $table->integer('total');
-            $table->date('date');
+            $table->integer('qte');
             $table->timestamps();
         });
     }

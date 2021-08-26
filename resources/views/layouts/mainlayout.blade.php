@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{asset('plugins/daterangepicker/daterangepicker.css')}}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.min.css')}}">
-    <link rel="icon" type="image/png,jpg" href="{{ asset('img/logo.jpg') }}" />
+    <link rel="icon" type="image/png,jpg" href="{{ asset('img/logo2.jpg') }}" />
     <style>
         .note-editable {
             height: 270px;
@@ -54,7 +54,7 @@
 <body class="hold-transition sidebar-mini layout-fixed" style="font-family: 'calibri';">
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <nav class="main-header navbar navbar-expand navbar-white navbar-dark">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item" style="color: #002a54;font-weight:bold">
@@ -69,34 +69,34 @@
                 <li class="nav-item">
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <button type="submit" class="nav-link text-warning btn btn-dark" style="color: #002a54;font-weight:bold">
-                            <i class="fa fa-sign-out-alt"></i> Deconnexion
+                        <button type="submit" class="nav-link text-light btn btn-dark" style="color: #002a54;font-weight:bold">
+                            <i class="fa fa-sign-out-alt text-light"></i> Deconnexion
                         </button>
                     </form>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                        <i class="fas fa-expand-arrows-alt"></i>
+                        <i class="fas fa-expand-arrows-alt text-dark"></i>
                     </a>
                 </li>
             </ul>
         </nav>
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar main-sidebar-custom sidebar-dark-primary elevation-4">
+        <aside class="main-sidebar main-sidebar-custom sidebar-light-dark elevation-4">
             <!-- Brand Logo -->
             <a href="#" class="brand-link">
-                <img src="{{asset('img/logo.jpg')}}" alt="Mokutech Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light text-warning">Mokutecch</span>
+                <img src="{{asset('img/logo2.jpg')}}" alt="Mokutech Logo" class="brand-image elevation-3">
+                <span class="brand-text font-weight-light">Mokutecch</span>
             </a>
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <i class="fa fa-user fa-lg text-warning"></i>
+                        <i class="fa fa-user fa-lg"></i>
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block text-warning">{{ Auth::user()->name }}</a>
+                        <a href="#" class="d-block" style="font-weight:bold">{{ Auth::user()->name }}</a>
                     </div>
                 </div>
 
@@ -214,8 +214,8 @@
             <!-- /.sidebar -->
 
             <div class="sidebar-custom">
-                <a href="#" class="btn btn-link"><i class="fas fa-cogs"></i></a>
-                <a href="{{ route ('home') }}" class="btn btn-warning hide-on-collapse pos-right">Dashboard</a>
+                <a href="#" class="btn btn-link"><i class="fas fa-cogs text-dark"></i></a>
+                <a href="{{ route ('home') }}" class="btn btn-dark hide-on-collapse pos-right">Dashboard</a>
             </div>
             <!-- /.sidebar-custom -->
         </aside>
@@ -243,9 +243,9 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-        <footer class="main-footer" style="background-color: #ffc107!important;">
-            <strong class="text-dark">Copyright &copy; {{date('Y')}} Mokutech</strong>
-            <div class="float-right d-none d-sm-inline-block text-dark">
+        <footer class="main-footer bg-dark">
+            <strong class="text-light">Copyright &copy; {{date('Y')}} Mokutech</strong>
+            <div class="float-right d-none d-sm-inline-block text-light">
                 <b>Version</b> 1.0.0
             </div>
         </footer>

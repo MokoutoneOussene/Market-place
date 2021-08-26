@@ -78,8 +78,12 @@
                             <td>{{$frn->id}}</td>
                             <td>{{$frn->name}}</td>
                             <td>{{$frn->contact}}</td>
-                            <td>Modifier</td>
-                            <td>Supprimer</td>
+                            <td>
+                                <a href="#"><i class="fa fa-eye text-warning" aria-hidden="true"></i></a>
+                            </td>
+                            <td>
+                                <a href="#"><i class="fa fa-window-close text-danger" aria-hidden="true"></i></a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
