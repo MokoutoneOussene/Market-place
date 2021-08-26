@@ -27,7 +27,7 @@ class CreateAchatsTable extends Migration
 
             $table->string('qte');
             $table->integer('price');
-            $table->date('date');
+            $table->integer('total');
             $table->timestamps();
         });
     }

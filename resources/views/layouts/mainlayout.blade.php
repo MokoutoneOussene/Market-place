@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{asset('plugins/daterangepicker/daterangepicker.css')}}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.min.css')}}">
+    <link rel="icon" type="image/png,jpg" href="{{ asset('img/logo.jpg') }}" />
     <style>
         .note-editable {
             height: 270px;
@@ -37,6 +38,14 @@
 
         .page-link {
             color: rgb(0, 149, 52) !important;
+        }
+
+        .layout-navbar-fixed .wrapper .main-header {
+            left: 0;
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 1037;
         }
     </style>
 
@@ -65,16 +74,20 @@
                         </button>
                     </form>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar main-sidebar-custom sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="#" class="brand-link">
-                <img src="{{asset('img/mokutech.jpg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="{{asset('img/logo.jpg')}}" alt="Mokutech Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light text-warning">Mokutecch</span>
             </a>
-
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
@@ -106,7 +119,7 @@
                         with font-awesome or any other icon font library -->
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="fa fa-shopping-bag"></i>
                                 <p>PRODUITS<i class="right fas fa-angle-left"></i></p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -120,7 +133,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="fa fa-folder-open"></i>
                                 <p>CATEGORIES<i class="right fas fa-angle-left"></i></p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -134,7 +147,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="fa fa-shopping-basket"></i>
                                 <p>VENTES<i class="right fas fa-angle-left"></i></p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -148,7 +161,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="fa fa-shopping-cart"></i>
                                 <p>ACHATS<i class="right fas fa-angle-left"></i></p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -178,13 +191,13 @@
                         <li class="nav-header">SUPLEMENTAIRES</li>
                         <li class="nav-item">
                             <a href="{{ route ('gestion_client.index') }}" class="nav-link">
-                                <i class="nav-icon far fa-circle text-danger"></i>
+                                <i class="fa fa-user-circle"></i>
                                 <p class="text">Clients</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route ('gestion_fournisseur.index') }}" class="nav-link">
-                                <i class="nav-icon far fa-circle text-warning"></i>
+                                <i class="fa fa-users"></i>
                                 <p>Fournisseurs</p>
                             </a>
                         </li>

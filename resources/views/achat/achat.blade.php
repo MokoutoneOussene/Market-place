@@ -3,11 +3,11 @@
 @section('maincontent')
 
 <!-- SELECT2 EXAMPLE -->
-<form action="{{ route ('gestion_category.store') }}" method="POST">
+<form action="{{ route ('gestion_achat.store') }}" method="POST">
     @csrf
     <div class="card card-default">
         <div class="card-header bg-warning">
-            <h3 class="card-title" style="color: #002a54;font-weight:bold">Formulaire des categories</h3>
+            <h3 class="card-title" style="color: #002a54;font-weight:bold">Formulaire des achats</h3>
 
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -21,13 +21,42 @@
         <!-- /.card-header -->
         <div class="card-body">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="form-group">
-                        <label>Nom de categorie</label>
-                        <input name="name" class="form-control select2" style="width: 100%;">
+                        <label>Nom du produit</label>
+                        <select name="product_id" class="form-control select2" style="width: 100%;" required>
+                            @foreach($products as $prod)
+                            <option value="{{$prod->id}}">{{$prod->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Nom du fournisseur</label>
+                        <select name="fournisseur_id" class="form-control select2" style="width: 100%;" required>
+                            @foreach($founisseurs as $frn)
+                            <option value="{{$frn->id}}">{{$frn->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Quantité</label>
+                        <input type="number" name="qte" class="form-control select2" style="width: 100%;" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Prix de vente</label>
+                        <input type="number" name="price" class="form-control select2" style="width: 100%;" required>
+                    </div>
+                </div>
+            </div>
+            <input type="text" name="user_id" value="{{Auth::User()->id}}" hidden>
         </div>
         <button type="submit" class="btn btn-dark">Envoyer le formulaire</button>
         <!-- /.card-body -->
@@ -39,7 +68,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header bg-warning">
-                <h3 class="card-title" style="color: #002a54;font-weight:bold">Liste des produits</h3>
+                <h3 class="card-title" style="color: #002a54;font-weight:bold">Liste des achats</h3>
                 <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
                         <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
@@ -57,19 +86,27 @@
                 <table class="table table-head-fixed text-nowrap">
                     <thead>
                         <tr>
-                            <th>Numero</th>
-                            <th>Nom du categorie</th>
+                            <th>Nom du client</th>
+                            <th>Nom du fournisseur</th>
+                            <th>Quantité</th>
+                            <th>Prix unitaire</th>
+                            <th>Prix total</th>
+                            <th>Detail</th>
                             <th>Modifier</th>
                             <th>Supprimer</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($category as $cate)
+                        @foreach($achats as $achat)
                         <tr>
-                            <td>{{$cate->id}}</td>
-                            <td>{{$cate->name}}</td>
-                            <td>Modifier</td>
-                            <td>Supprimer</td>
+                            <td>{{$achat->fournisseur->name}}</td>
+                            <td>{{$achat->product->name}}</td>
+                            <td>{{$achat->qte}}</td>
+                            <td>{{$achat->price}}</td>
+                            <td>{{$achat->total}}</td>
+                            <td><a href="#"><i class="fa fa-eye text-success" aria-hidden="true"></i></a></td>
+                            <td><a href="#"><i class="fa fa-edit text-warning" aria-hidden="true"></i></a></td>
+                            <td><a href="#"><i class="fa fa-window-close text-danger" aria-hidden="true"></i></a></td>
                         </tr>
                         @endforeach
                     </tbody>

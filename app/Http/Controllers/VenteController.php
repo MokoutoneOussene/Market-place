@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Client;
+use App\Product;
 use App\Vente;
 use Illuminate\Http\Request;
 
@@ -16,6 +18,8 @@ class VenteController extends Controller
     {
         return view('vente.vente', [
             'ventes' => Vente::all(),
+            'products' => Product::all(),
+            'clients' => Client::all(),
         ]);
     }
 
@@ -37,7 +41,16 @@ class VenteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $total = $request->qte * $request->price;
+        Vente::create([
+            'product_id' => $request->product_id,
+            'user_id' => $request->user_id,
+            'client_id' => $request->client_id,
+            'qte' => $request->qte,
+            'price' => $request->price,
+            'total' => $total,
+        ]);
+        return redirect()->route('gestion_vente.index');
     }
 
     /**

@@ -25,8 +25,8 @@ class CreateVentesTable extends Migration
             $table->unsignedBigInteger('client_id')->unsigned();
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->string('qte');
             $table->integer('price');
+            $table->integer('total');
             $table->date('date');
             $table->timestamps();
         });

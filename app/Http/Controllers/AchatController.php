@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Vente;
+use App\Achat;
+use App\Fournisseur;
+use App\Product;
 use Illuminate\Http\Request;
 
 class AchatController extends Controller
@@ -14,8 +16,10 @@ class AchatController extends Controller
      */
     public function index()
     {
-        return view('vente.vente', [
-            'ventes' => Vente::all(),
+        return view('achat.achat', [
+            'achats' => Achat::all(),
+            'products' => Product::all(),
+            'founisseurs' => Fournisseur::all(),
         ]);
     }
 
@@ -37,7 +41,16 @@ class AchatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $total = $request->qte * $request->price;
+        Achat::create([
+            'product_id' => $request->product_id,
+            'user_id' => $request->user_id,
+            'fournisseur_id' => $request->fournisseur_id,
+            'qte' => $request->qte,
+            'price' => $request->price,
+            'total' => $total,
+        ]);
+        return redirect()->route('gestion_achat.index');
     }
 
     /**

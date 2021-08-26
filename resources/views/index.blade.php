@@ -181,6 +181,7 @@
     <link rel="stylesheet" href="{{asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
+    <link rel="icon" type="image/png,jpg" href="{{ asset('img/mokutech.jpg') }}" />
     <style>
         .card-primary.card-outline {
             border-top: 3px solid #218838;

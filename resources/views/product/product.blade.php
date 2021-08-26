@@ -101,7 +101,7 @@
                                 <a href="#"><i class="fa fa-eye text-warning" aria-hidden="true"></i></a>
                             </td>
                             <td>
-                                <a href="#"><i class="fa fa-edit text-danger" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-window-close text-danger" aria-hidden="true"></i></a>
                             </td>
                         </tr>
                         @endforeach
